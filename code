@@ -1,0 +1,26 @@
+function allLongestStrings(inputArray) {
+    //variables to be utilized in solving the problem
+    var highest = inputArray[0].length;
+    var array=[];
+    //sorting out arrays that only have one values
+    if(inputArray.length == 1){
+          return inputArray;
+        }
+    //the loop searches for array values that have the longest string length
+    for(var i = 1;i < inputArray.length;i++){
+        //sorting out of the string values
+        if(highest < inputArray[i].length){
+            highest = inputArray[i].length;
+        }
+        //after the loop has identified the largest string value
+        if(i == inputArray.length-1){
+            //inputs string values that have the highest string length into the array
+            for(var j = 0;j < inputArray.length;j++){
+                if(inputArray[j].length == highest){
+                    array.push(inputArray[j]);       
+                }
+            }
+        }
+    }
+    return array;
+}
